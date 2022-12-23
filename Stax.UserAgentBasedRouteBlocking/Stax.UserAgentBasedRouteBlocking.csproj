@@ -1,0 +1,32 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net6.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Title>User Agent Based Route Blocking</Title>
+        <IsPackable>true</IsPackable>
+        <Version>0.0.1-beta</Version>
+        <Authors>Luke Mansell</Authors>
+        <Description>Allows you to block access to a list of routes but also provide user agents and referrers which can access those routes</Description>
+        <Copyright>Copyright (c) Luke Mansell // Stax Ventures</Copyright>
+        <PackageProjectUrl>https://github.com/lukemansell/string-sanitizer.git</PackageProjectUrl>
+        <RepositoryUrl>https://github.com/lukemansell/string-sanitizer.git</RepositoryUrl>
+        <RepositoryType>GitHub</RepositoryType>
+        <Company>Pixelstax</Company>
+        <PackageTags>route;block;security;user agent;referrer;</PackageTags>
+        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+        <PackageLicenseExpression>MIT</PackageLicenseExpression>
+        <PackageId>Stax.UserAgentBasedRouteBlocking</PackageId>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Microsoft.AspNetCore.Server.Kestrel" Version="2.2.0" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <InternalsVisibleTo Include="Tests" />
+        <None Include="../README.md">
+        </None>
+    </ItemGroup>
+</Project>
