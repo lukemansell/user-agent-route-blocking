@@ -5,7 +5,7 @@
         <ImplicitUsings>enable</ImplicitUsings>
         <Title>User Agent Based Route Blocking</Title>
         <IsPackable>true</IsPackable>
-        <Version>1.0.0-beta</Version>
+        <Version>1.0.1-beta</Version>
         <Authors>Luke Mansell</Authors>
         <Description>Allows you to block access to a list of routes but also provide user agents and referrers which can access those routes</Description>
         <Copyright>Copyright (c) Luke Mansell // Stax Ventures</Copyright>
