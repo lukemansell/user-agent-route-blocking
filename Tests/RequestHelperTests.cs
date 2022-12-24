@@ -78,7 +78,7 @@ public class RequestHelperTests
     }
     
     [Fact]
-    public void ShouldAllowRequest_ReturnsFalse_When_AValidListOfUserAgentsAndInvalidListOfReferrersIsSupplied()
+    public void ShouldAllowRequest_ReturnsTrue_When_AValidListOfUserAgentsAndInvalidListOfReferrersIsSupplied()
     {
         // arrange
         var userConfiguration = new UserConfiguration()
@@ -107,11 +107,11 @@ public class RequestHelperTests
         var result = RequestHelper.ShouldAllowRequest(_currentRequest, userConfiguration);
         
         // assert
-        Assert.False(result);
+        Assert.True(result);
     }
 
     [Fact]
-    public void ShouldAllowRequest_ReturnsFalse_When_AnInvalidListOfUserAgentsAndValidListOfReferrersIsSupplied()
+    public void ShouldAllowRequest_ReturnsTrue_When_AnInvalidListOfUserAgentsAndValidListOfReferrersIsSupplied()
     {
         // arrange
         var userConfiguration = new UserConfiguration()
@@ -133,6 +133,39 @@ public class RequestHelperTests
                 AllowedUserAgents = new []
                 {
                     "API2-client-token"
+                }
+            }
+        };
+        // act
+        var result = RequestHelper.ShouldAllowRequest(_currentRequest, userConfiguration);
+        
+        // assert
+        Assert.True(result);
+    }
+    
+    [Fact]
+    public void ShouldAllowRequest_ReturnsFalse_When_AnInvalidListOfUserAgentsAndInvalidListOfReferrersIsSupplied()
+    {
+        // arrange
+        var userConfiguration = new UserConfiguration()
+        {
+            PathsToAuthorize = new[]
+            {
+                "/v1/api.json",
+                "/v1/helloworld.json"
+            },
+            ReferrerOptions = new ReferrerOptions()
+            {
+                AllowedReferrers = new []
+                {
+                    "https://FAIL.com"
+                }
+            },
+            UserAgentOptions = new UserAgentOptions()
+            {
+                AllowedUserAgents = new []
+                {
+                    "FAIL"
                 }
             }
         };
