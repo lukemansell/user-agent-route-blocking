@@ -83,9 +83,9 @@ internal static class RequestHelper
     private static bool AllowListReferrersListAllUserAgents(CurrentRequest currentRequest,
         UserConfiguration userConfiguration)
     {
-        return userConfiguration.UserAgentOptions.AllowedUserAgents.Any(u =>
-                   currentRequest.UserAgent.Contains(u))
-               && userConfiguration.ReferrerOptions.AllowedReferrers.Any(u => currentRequest.Referrer.Contains(u))
-               && userConfiguration.PathsToAuthorize.Any(s => currentRequest.Path.StartsWithSegments(s));
+        return userConfiguration.PathsToAuthorize.Any(s => currentRequest.Path.StartsWithSegments(s)
+                && (userConfiguration.UserAgentOptions.AllowedUserAgents.Any(u => currentRequest.UserAgent.Contains(u))
+                    || userConfiguration.ReferrerOptions.AllowedReferrers.Any(u => currentRequest.Referrer.Contains(u))
+                    ));
     }
 }
