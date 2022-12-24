@@ -1,8 +1,11 @@
 # User Agent Based Route Blocking
 
+[![Version](https://img.shields.io/nuget/vpre/stax.autodependencyinjectionregistration.svg)](https://www.nuget.org/packages/stax.autodependencyinjectionregistration)
+[![Downloads](https://img.shields.io/nuget/dt/stax.autodependencyinjectionregistration.svg)](https://www.nuget.org/packages/stax.autodependencyinjectionregistration)
+---
 ## Summary
 
-This NuGet library allows you to block certain routes based on whether or not they have a certain user agent. It is a very simple way of doing API based authorisation. It also has the ability to allow certain referrers through, which can help enable your swagger to work for example, or help limit user agents coming from a certain site.
+This [NuGet library](https://www.nuget.org/packages/Stax.UserAgentBasedRouteBlocking/) allows you to block certain routes based on whether or not they have a certain user agent. It is a very simple way of doing API based authorisation. It also has the ability to allow certain referrers through, which can help enable your swagger to work for example, or help limit user agents coming from a certain site.
 
 An example might be you want to limit anyone from hitting https://api.example.com/v1/create-user.json unless they have the user agent `EXAMPLE.COM-FRONTEND` which your front end client sends. You could then also only allow requests with that user agent from `https://example.com` and also `https://api.example.com` (the latter which would allow your swagger to work for example).
 
