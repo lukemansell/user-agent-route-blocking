@@ -4,5 +4,5 @@ internal class UserAgentOptions
 {
     internal bool AllowAllUserAgents { get; set; }
     
-    internal string[]? AllowedUserAgents { get; set; }
+    internal string[] AllowedUserAgents { get; set; }
 }

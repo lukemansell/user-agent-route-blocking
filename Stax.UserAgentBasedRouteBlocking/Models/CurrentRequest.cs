@@ -8,7 +8,7 @@ internal class CurrentRequest
     {
     }
 
-    public CurrentRequest(string? referrer, PathString path, string? userAgent)
+    public CurrentRequest(string referrer, PathString path, string userAgent)
     {
         Referrer = referrer;
         Path = path;
@@ -17,7 +17,7 @@ internal class CurrentRequest
 
     internal PathString Path { get; set; }
 
-    internal string? Referrer { get; set; }
+    internal string Referrer { get; set; }
     
-    internal string? UserAgent { get; set; }
+    internal string UserAgent { get; set; }
 }

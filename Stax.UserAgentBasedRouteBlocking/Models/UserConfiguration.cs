@@ -10,7 +10,7 @@ internal class UserConfiguration
     /// check checks against the start. Eg: for https://google.com/v1/api.json you could enter in <code>/v1/api.json</code>
     /// or alternatively <code>/v1</code> would also capture that URL as it checks the start.
     /// </summary>
-    public string[]? PathsToAuthorize { get; set; }
+    public string[] PathsToAuthorize { get; set; }
     
     /// <summary>
     /// List of allowed user agents.
