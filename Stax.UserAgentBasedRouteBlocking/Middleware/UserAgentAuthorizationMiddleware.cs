@@ -5,18 +5,18 @@ using Stax.UserAgentBasedRouteBlocking.Helpers;
 
 namespace Stax.UserAgentBasedRouteBlocking.Middleware;
 
-internal class UserAgentAuthorizationMiddleware
+public class UserAgentAuthorizationMiddleware
 {
     private readonly RequestDelegate _requestDelegate;
     private readonly IConfiguration _configuration;
 
-    internal UserAgentAuthorizationMiddleware(RequestDelegate requestDelegate, IConfiguration configuration)
+    public UserAgentAuthorizationMiddleware(RequestDelegate requestDelegate, IConfiguration configuration)
     {
         _requestDelegate = requestDelegate;
         _configuration = configuration;
     }
 
-    internal async Task InvokeAsync(HttpContext httpContext)
+    public async Task InvokeAsync(HttpContext httpContext)
     {
         var requestInfo = RequestHelper.GetCurrentRequestInfo(httpContext.Request);
         var userConfiguration = UserConfigurationHelper.GetUserConfiguration(_configuration);
