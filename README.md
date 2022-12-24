@@ -1,7 +1,7 @@
 # User Agent Based Route Blocking
 
-[![Version](https://img.shields.io/nuget/vpre/stax.autodependencyinjectionregistration.svg)](https://www.nuget.org/packages/stax.autodependencyinjectionregistration)
-[![Downloads](https://img.shields.io/nuget/dt/stax.autodependencyinjectionregistration.svg)](https://www.nuget.org/packages/stax.autodependencyinjectionregistration)
+[![Version](https://img.shields.io/nuget/vpre/stax.useragentbasedrouteblocking.svg)](https://www.nuget.org/packages/stax.autodependencyinjectionregistration)
+[![Downloads](https://img.shields.io/nuget/dt/stax.useragentbasedrouteblocking.svg)](https://www.nuget.org/packages/stax.autodependencyinjectionregistration)
 ---
 ## Summary
 
