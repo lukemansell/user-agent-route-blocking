@@ -12,7 +12,7 @@ Configuration is set through your appsettings.json (or you can inject as environ
 
 ### Some how to use notes
 * The path check does a "starts with" check. Meaning to protect `https://api.example.com/v1` you would enter in `UserAgentBasedRouteBlocking:Paths` "/v1". This also means it acts like a wildcard meaning anything which starts with "/v1" is protected. Eg: `/v1/create.json`, `/v1/upload.json` etc
-* User agent is a direct check, you need to enter in the full expected user agent
+* User agent does a contains check, meaning `Mozilla` would cover `Mozilla 5.0 - Linux` for example.
 * Referrer does a "contains" check, meaning `https://example.com/a-page` would be covered by setting `https://example.com` in your config
 
 In your appsettings.json you need a structure of:
@@ -84,4 +84,4 @@ Below is an example which:
 
 ```
 
-As you have provided allowed lists for user agents and referrers, you do not need to set the AllowAll property.
+As you have provided allowed lists for user agents and referrers, you do not need to set the AllowAll property for each.
